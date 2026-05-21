@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "XHS Highlighter",
+  "version": "0.1.0",
+  "description": "在小红书帖子中进行荧光笔划线并保存，可在收藏面板快速回访帖子。",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://www.xiaohongshu.com/*"],
+  "action": {
+    "default_title": "XHS Highlighter",
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.xiaohongshu.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
